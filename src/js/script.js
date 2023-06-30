@@ -84,3 +84,19 @@ function reset() {
   });
 }
 reset();
+
+function dropMenu() {
+  const bars = document.querySelector(".navbar i");
+  const menu = document.querySelector(".drop-menu-container-none");
+  const drop = document.querySelector(".drop-menu-container-none a");
+  bars.addEventListener("mouseover", () => {
+    menu.setAttribute("class", "drop-menu-container");
+  });
+  menu.addEventListener("mouseout", (event) => {
+    const relatedTarget = event.relatedTarget;
+    if (!menu.contains(relatedTarget) && !drop.contains(relatedTarget)) {
+      menu.setAttribute("class", "drop-menu-container-none");
+    }
+  });
+}
+dropMenu();

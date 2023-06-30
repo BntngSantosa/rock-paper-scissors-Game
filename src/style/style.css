@@ -4,7 +4,7 @@
   --bg-container-comp: #dbdfaa;
   --bg-container-player: #b3c890;
   --color-font: #2f4849;
-  --bg-nav: #73a9ad7e;
+  --bg-nav: #73a9ad;
 }
 * {
   margin: 0;
@@ -24,10 +24,48 @@ body {
   align-items: center;
   color: var(--color-font);
   font-family: "Ubuntu", sans-serif;
+  z-index: 2;
+  position: relative;
 }
 .navbar i {
   font-size: 20px;
   color: var(--color-font);
+  transition: .5s ease-out;
+}
+.navbar i:hover{
+  transform: rotate(90deg);
+}
+.drop-menu-container-none {
+  width: 100%;
+  padding: 1.4rem 7%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--bg-container-player);
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  position: absolute;
+  top: -62px;
+  z-index: 1;
+  transition: .5s ease-out;
+}
+.drop-menu-container-none a,.drop-menu-container a {
+  color: var(--color-font);
+  text-decoration: none;
+}
+.drop-menu-container {
+  width: 100%;
+  padding: 1.4rem 7%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--bg-container-player);
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  position: absolute;
+  top: 72px;
+  z-index: 1;
+  transition: .5s ease-out;
 }
 .score {
   width: 100%;
@@ -168,6 +206,7 @@ body {
   background-color: var(--bg-nav);
   color: var(--color-font);
   font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
   font-weight: 700;
   cursor: pointer;
   transition: .2s ease-out;
