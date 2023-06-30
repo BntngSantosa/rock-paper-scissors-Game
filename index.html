@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Suit</title>
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <script src="https://kit.fontawesome.com/f3a02c88f8.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1>Game Suit</h1>
+      <a href="#"><i class="fa-solid fa-bars-staggered"></i></a>
+    </nav>
+    <main>
+      <section class="score">
+        <div class="score-player">
+          <label for="">Player Score</label>
+          <p class="player">0</p>
+        </div>
+        <h3>VS</h3>
+        <div class="score-comp">
+          <label for="">Computer Score</label>
+          <p class="computer">0</p>
+        </div>
+      </section>
+      <section class="game-content">
+        <div class="container-comp">
+          <h3>Computer</h3>
+          <img src="/asets/img/kertas.png" alt="" srcset="" class="imgs-comp" />
+        </div>
+        <div class="container-player">
+          <h3>Player</h3>
+          <div class="imgs">
+            <img src="/asets/img/kertas.png" alt="" srcset="" class="kertas" />
+            <img src="/asets/img/gunting.png" alt="" srcset="" class="gunting" />
+            <img src="/asets/img/batu.png" alt="" srcset="" class="batu" />
+          </div>
+        </div>
+      </section>
+      <section class="reset">
+        <button type="submit" class="btn-reset">Reset</button>
+      </section>
+    </main>
+    <div class="won-none">
+      <div class="container">
+        <i class="fa-solid fa-circle-check"></i>
+        <p>You WON !</p>
+        <button class="btn-ok-won">Ok</button>
+      </div>
+    </div>
+    <div class="lost-none">
+      <div class="container">
+        <i class="fa-solid fa-circle-xmark" style="color: #ff0000"></i>
+        <p>You LOST !</p>
+        <button class="btn-ok-lost">Oke</button>
+      </div>
+    </div>
+    <div class="draw-none">
+      <div class="container">
+        <i class="fa-solid fa-circle-exclamation" style="color: #00a93e"></i>
+        <p>DRAW !</p>
+        <button class="btn-ok-draw">Oke</button>
+      </div>
+    </div>
+    <script src="/src/js/script.js"></script>
+  </body>
+</html>

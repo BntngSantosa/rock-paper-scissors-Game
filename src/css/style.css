@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+:root {
+  --bg-body: #f5f0bb;
+  --bg-container-comp: #dbdfaa;
+  --bg-container-player: #b3c890;
+  --color-font: #2f4849;
+  --bg-nav: #73a9ad7e;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-weight: 400;
+  background-color: var(--bg-body);
+}
+.navbar {
+  width: 100%;
+  padding: 1.4rem 7%;
+  background-color: var(--bg-nav);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-font);
+  font-family: "Ubuntu", sans-serif;
+}
+.navbar i {
+  font-size: 20px;
+  color: var(--color-font);
+}
+.score {
+  width: 100%;
+  padding: 1rem 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  color: var(--color-font);
+}
+.score .score-player {
+  display: block;
+  text-align: center;
+}
+.score .score-comp {
+  display: block;
+  text-align: center;
+}
+.game-content {
+  width: 100%;
+  padding: 1rem 7%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: "Ubuntu", sans-serif;
+}
+.game-content .container-comp {
+  width: 100%;
+  background-color: var(--bg-container-comp);
+  padding: 1.4rem 7%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+}
+.game-content .container-comp img {
+  width: 150px;
+  align-self: center;
+}
+.game-content .container-player {
+  width: 100%;
+  background-color: var(--bg-container-player);
+  padding: 1.4rem 7%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+}
+.game-content .container-player .imgs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px;
+}
+.game-content .container-player img {
+  width: 90px;
+  align-self: center;
+  cursor: pointer;
+}
+.won-none,
+.lost-none,
+.draw-none {
+  display: none;
+}
+.won,
+.lost,
+.draw {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(95, 158, 160, 0.131);
+  backdrop-filter: blur(1.5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.won .container,
+.lost .container,
+.draw .container {
+  width: 50%;
+  height: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  color: var(--color-font);
+  animation: zoomIn 0.2s forwards;
+}
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.won .container i,
+.lost .container i,
+.draw .container i {
+  font-size: 70px;
+  color: lightgreen;
+}
+.won .container .btn-ok-won,
+.lost .container .btn-ok-lost,
+.draw .container .btn-ok-draw {
+  width: 50%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--bg-nav);
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+}
+.reset {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.reset button {
+  width: 250px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--bg-nav);
+  color: var(--color-font);
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+}
