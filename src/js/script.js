@@ -77,10 +77,22 @@ function reset() {
   const btnReset = document.querySelector(".btn-reset");
   const scorePlayer = document.querySelector(".player");
   const scoreComp = document.querySelector(".computer");
+  const confirm = document.querySelector(".confirm-none");
+  const btnOk = document.querySelector(".btn-oke");
+  const btnCancel = document.querySelector(".btn .btn-cancel");
 
   btnReset.addEventListener("click", () => {
-    scorePlayer.innerHTML = "0";
-    scoreComp.innerHTML = "0";
+    confirm.setAttribute("class", "confirm");
+
+    btnOk.addEventListener("click", () => {
+      confirm.setAttribute("class", "confirm-none");
+      scorePlayer.innerHTML = "0";
+      scoreComp.innerHTML = "0";
+    });
+
+    btnCancel.addEventListener("click", () => {
+      confirm.setAttribute("class", "confirm-none");
+    });
   });
 }
 reset();
@@ -95,9 +107,9 @@ function dropMenu() {
     bars.style.transition = "0.5s ease-out";
     bars.style.transform = dropMenu.classList.contains("drop-menu-container") ? "rotate(90deg)" : "rotate(0)";
   });
-  
+
   document.addEventListener("click", (e) => {
-    if(!bars.contains(e.target) && !dropMenu.contains(e.target)){
+    if (!bars.contains(e.target) && !dropMenu.contains(e.target)) {
       bars.style.transform = "rotate(0)";
       dropMenu.classList.replace("drop-menu-container", "drop-menu-container-none");
     }

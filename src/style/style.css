@@ -24,13 +24,11 @@ body {
   align-items: center;
   color: var(--color-font);
   font-family: "Ubuntu", sans-serif;
-  z-index: 2;
-  position: relative;
 }
 .navbar i {
   font-size: 20px;
   color: var(--color-font);
-  transition: .5s ease-out;
+  transition: 0.5s ease-out;
 }
 .drop-menu-container-none {
   width: 100%;
@@ -39,14 +37,15 @@ body {
   align-items: center;
   gap: 10px;
   background-color: var(--bg-container-player);
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-weight: 500;
   position: absolute;
   top: -62px;
   z-index: 1;
-  transition: .5s ease-out;
+  transition: 0.5s ease-out;
 }
-.drop-menu-container-none a,.drop-menu-container a {
+.drop-menu-container-none a,
+.drop-menu-container a {
   color: var(--color-font);
   text-decoration: none;
 }
@@ -57,12 +56,12 @@ body {
   align-items: center;
   gap: 10px;
   background-color: var(--bg-container-player);
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-weight: 500;
   position: absolute;
   top: 72px;
   z-index: 1;
-  transition: .5s ease-out;
+  transition: 0.5s ease-out;
 }
 .score {
   width: 100%;
@@ -101,8 +100,7 @@ body {
 .game-content .container-comp img {
   width: 100px;
   align-self: center;
-  transition: .2s ease-out;
-
+  transition: 0.2s ease-out;
 }
 .game-content .container-player {
   width: 100%;
@@ -122,19 +120,21 @@ body {
   width: 90px;
   align-self: center;
   cursor: pointer;
-  transition: .2s ease-out;
+  transition: 0.2s ease-out;
 }
 .game-content .container-player img:hover {
   transform: scale(1.2);
 }
 .won-none,
 .lost-none,
-.draw-none {
+.draw-none,
+.confirm-none {
   display: none;
 }
 .won,
 .lost,
-.draw {
+.draw,
+.confirm {
   width: 100%;
   height: 100vh;
   position: absolute;
@@ -147,7 +147,8 @@ body {
 }
 .won .container,
 .lost .container,
-.draw .container {
+.draw .container,
+.confirm .container {
   width: 250px;
   display: flex;
   align-items: center;
@@ -178,7 +179,9 @@ body {
 }
 .won .container .btn-ok-won,
 .lost .container .btn-ok-lost,
-.draw .container .btn-ok-draw {
+.draw .container .btn-ok-draw,
+.confirm .container .btn .btn-oke,
+.confirm .container .btn .btn-cancel {
   width: 50%;
   height: 30px;
   border: none;
@@ -186,6 +189,16 @@ body {
   background-color: var(--bg-nav);
   font-family: "Ubuntu", sans-serif;
   font-weight: 500;
+  cursor: pointer;
+}
+.confirm .container .btn {
+  display: flex;
+  gap: 20px;
+  width: 140px;
+}
+.confirm .container .btn .btn-cancel {
+  background-color: #ff0000;
+  color: #edecf2;
   cursor: pointer;
 }
 .reset {
@@ -206,16 +219,16 @@ body {
   font-size: 18px;
   font-weight: 700;
   cursor: pointer;
-  transition: .2s ease-out;
+  transition: 0.2s ease-out;
 }
-.reset button:hover{
+.reset button:hover {
   background-color: var(--bg-container-player);
 }
 @media (max-width: 600px) {
   .game-content .container-player img {
-    width: 50px ;
+    width: 50px;
   }
   .game-content .container-comp img {
-    width: 80px ;
+    width: 80px;
   }
 }
