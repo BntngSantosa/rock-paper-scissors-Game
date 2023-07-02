@@ -86,16 +86,20 @@ function reset() {
 reset();
 
 function dropMenu() {
-  const bars = document.querySelector(".navbar i");
-  const menu = document.querySelector(".drop-menu-container-none");
-  const drop = document.querySelector(".drop-menu-container-none a");
-  bars.addEventListener("mouseover", () => {
-    menu.setAttribute("class", "drop-menu-container");
+  const dropMenu = document.querySelector(".drop-menu-container-none");
+  const bars = document.getElementById("hamburger");
+
+  bars.addEventListener("click", () => {
+    dropMenu.classList.toggle("drop-menu-container-none");
+    dropMenu.classList.toggle("drop-menu-container");
+    bars.style.transition = "0.5s ease-out";
+    bars.style.transform = dropMenu.classList.contains("drop-menu-container") ? "rotate(90deg)" : "rotate(0)";
   });
-  menu.addEventListener("mouseout", (event) => {
-    const relatedTarget = event.relatedTarget;
-    if (!menu.contains(relatedTarget) && !drop.contains(relatedTarget)) {
-      menu.setAttribute("class", "drop-menu-container-none");
+  
+  document.addEventListener("click", (e) => {
+    if(!bars.contains(e.target) && !dropMenu.contains(e.target)){
+      bars.style.transform = "rotate(0)";
+      dropMenu.classList.replace("drop-menu-container", "drop-menu-container-none");
     }
   });
 }

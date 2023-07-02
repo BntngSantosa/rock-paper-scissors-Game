@@ -32,9 +32,6 @@ body {
   color: var(--color-font);
   transition: .5s ease-out;
 }
-.navbar i:hover{
-  transform: rotate(90deg);
-}
 .drop-menu-container-none {
   width: 100%;
   padding: 1.4rem 7%;
